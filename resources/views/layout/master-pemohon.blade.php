@@ -1,7 +1,0 @@
-
-	<!-- start: BODY -->
-	<body>
-
-		
-		
-		

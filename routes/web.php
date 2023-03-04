@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KbliController;
 use App\Http\Controllers\PetugasController;
+use App\Http\Controllers\PengawasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,4 +70,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::resource('kbli', KbliController::class);
     Route::resource('petugas', PetugasController::class);
+    Route::resource('pengawas', PengawasController::class);
 });

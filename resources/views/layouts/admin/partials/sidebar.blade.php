@@ -11,8 +11,8 @@
 
         @if (Auth::user()->role == 'admin')
         <!-- start: ADMIN -->
-        <li class="{{ Request::segment(1) === 'dashboard-pemohon' ? 'active' : '' }}">
-            <a href="/dashboard-pemohon"><i class="clip-home-3"></i>
+        <li class="{{ Request::segment(1) === 'home' ? 'active' : '' }}">
+            <a href="/home"><i class="clip-home-3"></i>
                 <span class="title"> Dashboard </span><span class="selected"></span>
             </a>
         </li>
@@ -29,7 +29,7 @@
                 <span class="selected"></span>
             </a>
         </li>
-        <li >
+        <li>
             <a href="javascript:void(0)">
                 <i class="clip-file"></i>
                 <span class="title"> Dokumen </span>
@@ -42,8 +42,8 @@
                 <span class="selected"></span>
             </a>
         </li>
-        <li>
-            <a href="javascript:void(0)">
+        <li class="{{ Request::segment(1) === 'pengawas' ? 'active' : '' }}">
+            <a href="{{ route('pengawas.index')}}">
                 <i class="clip-user-4"></i>
                 <span class="title"> Pengawas </span>
                 <span class="selected"></span>

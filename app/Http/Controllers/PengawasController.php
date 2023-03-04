@@ -2,27 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\petugas;
-use App\Models\User;
+use App\Models\pengawas;
 use Illuminate\Http\Request;
+use App\Models\User;
 
-class PetugasController extends Controller
+class PengawasController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function __construct()
     {
         $this->middleware('auth');
     }
-
-    public function index()
+    
+     public function index()
     {
-        $petugas = petugas::all();
-        return view('admin.petugas.index', compact('petugas'));
+        $pengawas = pengawas::all();
+        return view('admin.pengawas.index', compact('pengawas'));
     }
 
     /**
@@ -32,7 +31,7 @@ class PetugasController extends Controller
      */
     public function create()
     {
-        return view('admin.petugas.create');
+        return view('admin.pengawas.create');
     }
 
     /**
@@ -43,7 +42,6 @@ class PetugasController extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate(
             [
                 'email' => 'required|email|unique:users',
@@ -51,34 +49,32 @@ class PetugasController extends Controller
         
         $user = User::create([
             'name' =>$request->nama,
-            'role'  =>'petugas',
+            'role'  =>'pengawas',
             'email' =>$request->email,
-            'password'   =>bcrypt($request->no_hp),
+            'password'   =>bcrypt(12345678),
         ]);
 
-        $petugas = petugas::create([
+        $pengawas = pengawas::create([
             'user_id' => $user->id,
             'nama' => $request->nama,
-            'kode' => $request->kode,
+            'lembaga' => $request->lembaga,
             'jabatan' => $request->jabatan,
-            'no_hp' => $request->no_hp,
         ]);
 
-        if($petugas) {
-            return redirect()->route('petugas.index')->with(['success'=>'data berhasil ditambahkan']);
+        if($pengawas) {
+            return redirect()->route('pengawas.index')->with(['success'=>'data berhasil ditambahkan']);
         } else {
-            return redirect()->route('petugas.index')->with(['gagal'=>'data gagal ditambahkan']);
+            return redirect()->route('pengawas.index')->with(['gagal'=>'data gagal ditambahkan']);
         }
-        
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\petugas  $petugas
+     * @param  \App\Models\pengawas  $pengawas
      * @return \Illuminate\Http\Response
      */
-    public function show(petugas $petugas)
+    public function show(pengawas $pengawas)
     {
         //
     }
@@ -86,72 +82,60 @@ class PetugasController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\petugas  $petugas
+     * @param  \App\Models\pengawas  $pengawas
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $petugas = petugas::find($id);
-        return view('admin.petugas.edit', compact('petugas'));
+        $pengawas = pengawas::find($id);
+        return view('admin.pengawas.edit', compact('pengawas'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\petugas  $petugas
+     * @param  \App\Models\pengawas  $pengawas
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $user = User::where('email',$request->email)->update([
             'name' =>$request->nama,
-            'role'  =>'petugas',
+            'role'  =>'pengawas',
             'email' =>$request->email
         ]);
 
-        $petugas = petugas::where('id',$id)->update([
+        $pengawas = pengawas::where('id',$id)->update([
             'nama' => $request->nama,
-            'kode' => $request->kode,
+            'lembaga' => $request->lembaga,
             'jabatan' => $request->jabatan,
-            'no_hp' => $request->no_hp,
         ]);
 
-        if($petugas){
-            return redirect()->route('petugas.index')->with(['success'=>'data berhasil diupdate']);
+        if($pengawas){
+            return redirect()->route('pengawas.index')->with(['success'=>'data berhasil diupdate']);
         }
         else{
-            return redirect()->route('petugas.index')->with(['error'=>'data error diupdate']);
+            return redirect()->route('pengawas.index')->with(['error'=>'data error diupdate']);
         }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\petugas  $petugas
+     * @param  \App\Models\pengawas  $pengawas
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $petugas = petugas::find($id);
-        $user = User::where('id', $petugas->user_id)->first();
+        $pengawas = pengawas::find($id);
+        $user = User::where('id', $pengawas->user_id)->first();
         $user->delete();
-        $cek = $petugas->delete();
+        $cek = $pengawas->delete();
         if($cek) {
-            return redirect()->route('petugas.index')->with('success', 'data berhasil dihapus');
+            return redirect()->route('pengawas.index')->with('success', 'data berhasil dihapus');
         } else {
-            return redirect()->route('petugas.index')->with(['gagal'=>'data gagal dihapus']);
+            return redirect()->route('pengawas.index')->with(['gagal'=>'data gagal dihapus']);
         }
-    }
-
-    public function checkemail($nama) {
-
-        $cek = User::where('email',$nama)->first();
-        $val = true;
-        if($cek)
-        {
-            $val = false;
-        } 
-        return $val;
     }
 }

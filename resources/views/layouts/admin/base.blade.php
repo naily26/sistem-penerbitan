@@ -116,7 +116,7 @@
         @if($message = Session::get('error'))
         toastr.error("{{$message}}");
         @endif
-        @if($message = Session::get('gagal'))
+        @if($message = Session::get('warning'))
         toastr.warning("{{$message}}");
         @endif
 

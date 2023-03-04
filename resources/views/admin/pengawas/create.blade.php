@@ -13,8 +13,8 @@
                 <ol class="breadcrumb">
                     <li>
                         <i class="clip-pencil"></i>
-                        <a href="{{ route('petugas.index')}}">
-                            Data Petugas
+                        <a href="{{ route('pengawas.index')}}">
+                            Data Pengawas
                         </a>
                     </li>
                     <li class="active">
@@ -22,7 +22,7 @@
                     </li>
                 </ol>
                 <div class="page-header">
-                    <h1>Tambah Data Petugas </h1>
+                    <h1>Tambah Data Pengawas </h1>
                 </div>
 
                 <!-- end: PAGE TITLE & BREADCRUMB -->
@@ -35,7 +35,7 @@
                 <!-- start: TEXT FIELDS PANEL -->
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form method="post" action="{{ route('petugas.store') }}" class="form-horizontal">
+                        <form method="post" action="{{ route('pengawas.store') }}" class="form-horizontal">
                             @csrf
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="nama">
@@ -47,12 +47,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label" for="kode">
-                                    Kode
+                                <label class="col-sm-2 control-label" for="lembaga">
+                                    Lembaga
                                 </label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="kode" placeholder="Kode" id="form-field-1"
-                                        class="form-control" value="{{ old('kode') }}" required>
+                                    <input type="text" name="lembaga" placeholder="Lembaga" id="form-field-1"
+                                        class="form-control" value="{{ old('lembaga') }}" required>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -62,17 +62,6 @@
                                 <div class="col-sm-9">
                                     <input type="text" name="jabatan" placeholder="Jabatan" id="form-field-1"
                                         class="form-control" value="{{ old('jabatan') }}" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label" for="no_hp">
-                                    Nomor Handphone
-                                </label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="no_hp" placeholder="Nomor Handphone" id="form-field-1"
-                                        class="form-control" value="{{ old('no_hp') }}"
-                                        onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
-                                        required>
                                 </div>
                             </div>
                             <div class="form-group">

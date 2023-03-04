@@ -10,14 +10,14 @@
 
                 <!-- start: PAGE TITLE & BREADCRUMB -->
                 <ol class="breadcrumb">
-
+                    
                     <li class="active">
-                        Data Kode KBLI
+                        Data Pengawas
                     </li>
 
                 </ol>
                 <div class="page-header">
-                    <h1>Data Kode KBLI <small> Klasifikasi Baku Lapangan Usaha Indonesia</small></h1>
+                    <h1>Data Pengawas <small> </small></h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
             </div>
@@ -26,7 +26,7 @@
         <!-- start: PAGE CONTENT -->
         <div class="row">
             <div class="col-md-12">
-                <a class="btn btn-primary" href="{{ route('kbli.create')}}"><i class="fa fa-plus"></i>
+                <a class="btn btn-primary" href="{{ route('pengawas.create')}}"><i class="fa fa-plus"></i>
                     Tambah Data</a>
             </div>
         </div><br />
@@ -37,72 +37,72 @@
                 <div class="panel panel-default">
 
                     <div class="panel-body">
+                        <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th class="hidden-xs">Kode</th>
-                                    <th>Keterangan</th>
+                                    <th class="hidden-xs">Nama</th>
+                                    <th>Jabatan</th>
+                                    <th>Lembaga</th>
+                                    <th>E-mail</th>
+                                    <th>Password</th>
                                     <th>Action</th>
                                     {{-- <th>Action</th> --}}
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $no=1 ?>
-                                @foreach ($kbli as $key => $data)
+                                @foreach ($pengawas as $key => $data)
                                 <tr>
                                     <td>{{$no}}</td>
-                                    <td class="hidden-xs">{{$data->kode}}</td>
-                                    <td>{{$data->keterangan}}</td>
+                                    <td class="hidden-xs">{{$data->nama}}</td>
+                                    <td>{{$data->jabatan}}</td>
+                                    <td>{{$data->lembaga}}</td>
+                                    <td>{{$data->user->email}}</td>
+                                    <td>12345678</td>
                                     <td>
-                                        <a class="btn btn-xs btn-light-grey"
-                                            href="{{ route('kbli.edit', $data->id)}}"><i class="fa fa-edit"></i>
+                                        <a class="btn btn-xs btn-light-grey" href="{{ route('pengawas.edit', $data->id)}}"><i class="fa fa-edit"></i>
                                             edit</a>
-                                        <a class="btn btn-xs btn-light-grey" data-toggle="modal"
-                                            href="#delete{{$data->id}}"><i class="fa fa-trash-o"></i>
+                                        <a class="btn btn-xs btn-light-grey" data-toggle="modal" href="#delete{{$data->id}}"><i class="fa fa-trash-o"></i>
                                             hapus</a>
-                                        <a class="btn btn-xs btn-light-grey"
-                                            href="{{ route('kbli.show',  $data->id)}}"><i class="fa fa-eye"></i>
-                                            detail</a>
                                     </td>
                                 </tr>
                                 <?php $no++ ?>
-                                <div id="delete{{$data->id}}" class="modal fade" tabindex="-1" data-width="360"
-                                    style="display: none;">
+                                <div id="delete{{$data->id}}" class="modal fade" tabindex="-1" data-width="360" style="display: none;">   
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                                             &times;
                                         </button>
                                         <h4 class="modal-title">
                                             <i class="bi bi-exclamation-octagon-fill" style="color: red"></i>
-                                            Hapus Kode KBLI?
+                                            Hapus Data Petugas?
                                         </h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <p>Semua data yang berkaitan dengan skema ini akan terhapus juga. Apakah
-                                                    Anda yakin ingin menghapus?</p>
+                                                <p>Semua data yang berkaitan dengan skema ini akan terhapus juga. Apakah Anda yakin ingin menghapus?</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <form action="{{url('kbli/'. $data->id)}}" method="post"
-                                        enctype="multipart/form-data">
+                                    <form action="{{url('pengawas/'. $data->id)}}" method="post" enctype="multipart/form-data">
                                         {{ method_field('delete') }}
                                         @csrf
-                                        <div class="modal-footer">
-                                            <button type="button" data-dismiss="modal" class="btn btn-default">
-                                                Batalkan
-                                            </button>
-                                            <button type="submit" class="btn btn-danger" id="submit">
-                                                Ya
-                                            </button>
-                                        </div>
+                                    <div class="modal-footer">
+                                        <button type="button" data-dismiss="modal" class="btn btn-default">
+                                            Batalkan
+                                        </button>
+                                        <button type="submit" class="btn btn-danger" id="submit">
+                                            Ya
+                                        </button>
+                                    </div>
                                     </form>
                                 </div>
                                 @endforeach
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
                 <!-- end: DYNAMIC TABLE PANEL -->
@@ -117,10 +117,8 @@
 @push('style')
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/plugins/select2/select2.css') }}" />
 <link rel="stylesheet" href="{{ asset('assets/admin/plugins/DataTables/media/css/DT_bootstrap.css') }}" />
-<link href="{{ asset('assets/admin/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css') }}" rel="stylesheet"
-    type="text/css" />
-<link href="{{ asset('assets/admin/plugins/bootstrap-modal/css/bootstrap-modal.css') }}" rel="stylesheet"
-    type="text/css" />
+<link href="{{ asset('assets/admin/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/admin/plugins/bootstrap-modal/css/bootstrap-modal.css') }}" rel="stylesheet" type="text/css"/>
 <style>
     i {
         padding: 5px;
@@ -137,8 +135,8 @@
 <script src="assets/admin/js/table-data.js"></script>
 <script src="assets/admin/js/index.js"></script>
 <script src="{{ asset('assets/admin/plugins/bootstrap-modal/js/bootstrap-modal.js') }}"></script>
-<script src="{{ asset('assets/admin/plugins/bootstrap-modal/js/bootstrap-modalmanager.js') }}"></script>
-<script src="{{ asset('assets/admin/js/ui-modals.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/bootstrap-modal/js/bootstrap-modalmanager.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/ui-modals.js') }}"></script>
 <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 <script>
     jQuery(document).ready(function () {
