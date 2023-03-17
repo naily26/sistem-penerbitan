@@ -43,6 +43,7 @@
                                     <th>No</th>
                                     <th class="hidden-xs">Kode</th>
                                     <th>Keterangan</th>
+                                    <th>Kategori</th>
                                     <th>Action</th>
                                     {{-- <th>Action</th> --}}
                                 </tr>
@@ -54,6 +55,7 @@
                                     <td>{{$no}}</td>
                                     <td class="hidden-xs">{{$data->kode}}</td>
                                     <td>{{$data->keterangan}}</td>
+                                    <td>{{$data->kategori == 'angkutan-penumpang-umum' ? 'Angkutan Penumpang Umum' :' Angkutan Barang Umum' }}</td>
                                     <td>
                                         <a class="btn btn-xs btn-light-grey"
                                             href="{{ route('kbli.edit', $data->id)}}"><i class="fa fa-edit"></i>

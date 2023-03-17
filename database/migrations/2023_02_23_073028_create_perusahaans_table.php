@@ -15,6 +15,14 @@ class CreatePerusahaansTable extends Migration
     {
         Schema::create('perusahaans', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_perusahaan');
+            $table->string('nama_pimpinan');
+            $table->string('nomor_telepon');
+            $table->text('alamat');
+            $table->string('nib');
+            $table->string('dokumen_nib');
+            $table->foreignId('kbli_id');
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }

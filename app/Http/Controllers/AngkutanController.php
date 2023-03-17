@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\perusahaan;
+use App\Models\angkutan;
+use App\Models\kbli;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\kbli;
 
-use PDF;
-
-class PerusahaanController extends Controller
+class AngkutanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,9 +18,9 @@ class PerusahaanController extends Controller
     {
         if (Auth::user()->role == 'pemohon') {
             $kbli = kbli::all();
-            return view('pemohon.perusahaan.index', compact('kbli'));
+            return view('pemohon.angkutan.index', compact('kbli'));
         } elseif (Auth::user()->role == 'petugas') {
-            return view('petugas.perusahaan.index');
+            return view('petugas.angkutan.index');
         }
     }
 
@@ -34,7 +32,7 @@ class PerusahaanController extends Controller
     public function create()
     {
         $kbli = kbli::all();
-        return view('pemohon.perusahaan.create', compact('kbli'));
+        return view('pemohon.angkutan.create', compact('kbli'));
     }
 
     /**
@@ -51,10 +49,10 @@ class PerusahaanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\perusahaan  $perusahaan
+     * @param  \App\Models\angkutan  $angkutan
      * @return \Illuminate\Http\Response
      */
-    public function show(perusahaan $perusahaan)
+    public function show(angkutan $angkutan)
     {
         //
     }
@@ -62,13 +60,13 @@ class PerusahaanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\perusahaan  $perusahaan
+     * @param  \App\Models\angkutan  $angkutan
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         if (Auth::user()->role == 'petugas') {
-            return view('petugas.perusahaan.edit');
+            return view('petugas.angkutan.edit');
         }
     }
 
@@ -76,10 +74,10 @@ class PerusahaanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\perusahaan  $perusahaan
+     * @param  \App\Models\angkutan  $angkutan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, perusahaan $perusahaan)
+    public function update(Request $request, angkutan $angkutan)
     {
         //
     }
@@ -87,18 +85,12 @@ class PerusahaanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\perusahaan  $perusahaan
+     * @param  \App\Models\angkutan  $angkutan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(perusahaan $perusahaan)
+    public function destroy(angkutan $angkutan)
     {
         //
     }
-
-
-    public function cetak_surat(){
-        $data = PDF::loadview('petugas.perusahaan.pdf-view');
-    	 return $data->stream('laporan.pdf');
-        
-    }
 }
+?>

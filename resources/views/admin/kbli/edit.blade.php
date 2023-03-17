@@ -58,6 +58,18 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label class="col-sm-2 control-label" for="kategori">
+                                    Kategori
+                                </label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" id="keterangan" name="keterangan" required>
+                                        <option value="">&nbsp;</option>
+                                        <option value="angkutan-barang-umum" {{ $kbli->kategori == 'angkutan-barang-umum' ? 'selected' : ''  }}>Angkutan Barang Umum</option>
+                                        <option value="angkutan-penumpang-umum" {{ $kbli->kategori == 'angkutan-penumpang-umum' ? 'selected' : ''  }}>Angkutan Penumpang Umum</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label class="col-sm-2 control-label" for="uraian">
                                     Uraian
                                 </label>

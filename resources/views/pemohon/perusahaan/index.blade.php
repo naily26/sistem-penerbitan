@@ -1,4 +1,4 @@
-@extends('layout.master-pemohon')
+@extends('layouts.admin.master')
 
 @section('content')
     <!-- start: PAGE -->
@@ -54,7 +54,7 @@
 					<!-- start: PAGE CONTENT -->
                     <div class="row">
 						<div class="col-md-12">
-                            <a class="btn btn-primary" href="/perusahaan-pemohon-tambah"><i class="fa fa-plus"></i>
+                            <a class="btn btn-primary" href="{{route('perusahaan.create')}}"><i class="fa fa-plus"></i>
                                 Tambah Perusahaan</a>
                         </div>
                     </div><br/>

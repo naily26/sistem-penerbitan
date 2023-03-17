@@ -29,7 +29,8 @@
                         &times;
                     </button>
                     <i class="fa fa-info-circle"></i>
-                    <strong>Perhatian!</strong> Untuk menambah satu perusahaan baru anda
+                    <strong>Perhatian!</strong> Untuk mengajukan permohonan surat keterangan perusahaan harap melengkapi
+                    persyaratan yang sudah ditentukan
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
             </div>
@@ -113,28 +114,28 @@
                                     </div>
                                 </div>
                                 <div id="step-4">
-                                    <h2 class="StepTitle">Step 2 Content</h2>
+                                    <h2 class="StepTitle">Step 3 Title</h2>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">
-                                            Nama Perusahaan <span class="symbol required"></span>
+                                            Nomor Kendaraan <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="Nama_Perusahaan" name="Nama_Perusahaan"
+                                            <input type="text" class="form-control" id="full_name" name="full_name"
                                                 placeholder="Text Field">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">
-                                            Nama Pimpinan Perusahaan <span class="symbol required"></span>
+                                            Nomor Uji <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="Nama_Pimpinan_Perusahaan" name="Nama_Pimpinan_Perusahaan"
+                                            <input type="text" class="form-control" id="full_name" name="full_name"
                                                 placeholder="Text Field">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">
-                                            Nomor Telepon <span class="symbol required"></span>
+                                            Merk <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="phone" name="phone"
@@ -143,7 +144,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">
-                                            Alamat <span class="symbol required"></span>
+                                            Tipe <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="address" name="address"
@@ -152,20 +153,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">
-                                            KBLI <span class="symbol required"></span>
-                                        </label>
-                                        <div class="col-sm-7">
-                                            <select class="form-control" id="country" name="country">
-                                                <option value="">&nbsp;</option>
-                                                <option value="Country 1">KBLI 1</option>
-                                                <option value="KBLI 2">KBLI 2</option>
-                                                <option value="KBLI 3">KBLI 3</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                           NIB  <span class="symbol required"></span>
+                                            Tahun Pembuatan <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="city" name="city"
@@ -173,11 +161,105 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <div class="col-sm-2 col-sm-offset-3">
-                                            <button class="btn btn-light-grey back-step btn-block">
-                                                <i class="fa fa-circle-arrow-left"></i> Back
-                                            </button>
+                                        <label class="col-sm-3 control-label">
+                                            Nama Pemilik Kendaraan <span class="symbol required"></span>
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="city" name="city"
+                                                placeholder="Text Field">
                                         </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">
+                                            Warna TNKB <span class="symbol required"></span>
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="city" name="city"
+                                                placeholder="Text Field">
+                                        </div>
+                                    </div>
+                                    <div id="izin-trayek" class="form-group">
+                                        <label class="col-sm-3 control-label">
+                                            Surat Keputusan Izin Trayek <span class="symbol required"></span>
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="file" class="form-control" id="city" name="city"
+                                                placeholder="Text Field">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">
+                                            STNKB <span class="symbol required"></span>
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="file" class="form-control" id="city" name="city"
+                                                placeholder="Text Field">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">
+                                            Buku Uji Berkala <span class="symbol required"></span>
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="file" class="form-control" id="city" name="city"
+                                                placeholder="Text Field">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">
+                                            Surat Kuasa <span class="symbol required"></span>
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="file" class="form-control" id="city" name="city"
+                                                placeholder="Text Field">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">
+                                            Keterangan <span class="symbol required"></span>
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <select class="form-control" id="keterangan" name="keterangan"
+                                                onchange="cekKeterangan(this)">
+                                                <option value="">&nbsp;</option>
+                                                <option value="perpanjangan-STNK">Perpanjangan STNK</option>
+                                                <option value="kendaraan-baru">Kendaraan Baru</option>
+                                                <option value="kendaraan-mutasi">Kendaraan Mutasi</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="kendaraan-baru">
+                                        <div id="surat-faktur" class="form-group">
+                                            <label class="col-sm-3 control-label">
+                                                Surat Faktur Intern dari dealer <span class="symbol required"></span>
+                                            </label>
+                                            <div class="col-sm-7">
+                                                <input type="file" class="form-control" id="city" name="surat-faktur"
+                                                    placeholder="Text Field">
+                                            </div>
+                                        </div>
+                                        <div id="srut" class="form-group">
+                                            <label class="col-sm-3 control-label">
+                                                Sertifikat Registrasi Uji Tipe <span class="symbol required"></span>
+                                            </label>
+                                            <div class="col-sm-7">
+                                                <input type="file" class="form-control" id="city" name="srut"
+                                                    placeholder="Text Field">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="kendaraan-mutasi">
+                                        <div id="keterangan-fiskal" class="form-group">
+                                            <label class="col-sm-3 control-label">
+                                                Surat Keterangan Fiskal <span class="symbol required"></span>
+                                            </label>
+                                            <div class="col-sm-7">
+                                                <input type="file" class="form-control" id="city"
+                                                    name="keterangan-fiskal" placeholder="Text Field">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <div class="col-sm-2 col-sm-offset-3">
                                             <button class="btn btn-blue next-step btn-block">
                                                 Next <i class="fa fa-arrow-circle-right"></i>
@@ -201,9 +283,8 @@
 @push('script')
 <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 <script src="{{asset('assets/admin/plugins/jquery-validation/dist/jquery.validate.min.js')}}"></script>
-<script src="{{asset('assets/admin/plugins/jQuery-Smart-Wizard/js/jquery.smartWizard.js')}}"></script>
+<script src="{{ asset('assets/admin/plugins/jQuery-Smart-Wizard/js/jquery.smartWizard.js')}}"></script>
 <script src="{{asset('assets/admin/js/form-wizard.js')}}"></script>
-
 <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 <script>
     jQuery(document).ready(function () {
@@ -212,8 +293,34 @@
     });
 
 </script>
+
+<script>
+    function showDiv(divId, element) {
+        document.getElementById(divId).style.display = element.value == divId ? 'block' : 'none';
+    }
+
+    function cekKeterangan(element) {
+        showDiv('kendaraan-baru', element);
+        showDiv('kendaraan-mutasi', element);
+    }
+
+</script>
 @endpush
 
 @push('style')
 
+<style>
+    #izin-trayek {
+        display: none
+    }
+
+    #kendaraan-baru {
+        display: none
+    }
+
+    #kendaraan-mutasi {
+        display: none
+    }
+
+</style>
 @endpush

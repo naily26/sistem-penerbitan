@@ -13,6 +13,7 @@ class kbli extends Model
     protected $fillable = [
         'kode',
         'keterangan',
+        'kategori',
         'uraian'
     ];
 }

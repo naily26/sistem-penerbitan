@@ -47,6 +47,7 @@ class KbliController extends Controller
             [
                 'kode',
                 'keterangan',
+                'kategori',
                 'uraian'
             ]
         );
@@ -96,6 +97,7 @@ class KbliController extends Controller
             [
                 'kode',
                 'keterangan',
+                'kategori',
                 'uraian'
             ]
         );

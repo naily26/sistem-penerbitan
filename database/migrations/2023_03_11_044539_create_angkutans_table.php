@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKblisTable extends Migration
+class CreateAngkutansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateKblisTable extends Migration
      */
     public function up()
     {
-        Schema::create('kblis', function (Blueprint $table) {
+        Schema::create('angkutans', function (Blueprint $table) {
             $table->id();
-            $table->string('kode');
-            $table->string('keterangan');
-            $table->enum('kategori', ['angkutan-penumpang-umum', 'angkutan-barang-umum']);
-            $table->text('uraian')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ class CreateKblisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kblis');
+        Schema::dropIfExists('angkutans');
     }
 }

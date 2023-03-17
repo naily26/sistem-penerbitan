@@ -54,11 +54,23 @@
 											</div>
 										</div>
 										<div class="form-group">
+											<label class="col-sm-2 control-label" for="kategori">
+												Kategori
+											</label>
+											<div class="col-sm-9">
+												<select class="form-control" id="kategori" name="kategori" required>
+													<option value="">&nbsp;</option>
+													<option value="angkutan-barang-umum">Angkutan Barang Umum</option>
+													<option value="angkutan-penumpang-umum">Angkutan Penumpang Umum</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
                                             <label class="col-sm-2 control-label" for="uraian">
                                                 Uraian
                                             </label>
                                             <div class="col-sm-9">
-                                                <textarea placeholder="Uraian" name="uraian" id="form-field-22" class="form-control" required></textarea>
+                                                <textarea placeholder="Uraian" name="uraian" id="form-field-22" class="form-control" ></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
