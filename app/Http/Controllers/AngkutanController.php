@@ -21,6 +21,8 @@ class AngkutanController extends Controller
             return view('pemohon.angkutan.index', compact('kbli'));
         } elseif (Auth::user()->role == 'petugas') {
             return view('petugas.angkutan.index');
+        } elseif (Auth::user()->role == 'pengawas') {
+            return view('pengawas.angkutan.index');
         }
     }
 
@@ -52,9 +54,9 @@ class AngkutanController extends Controller
      * @param  \App\Models\angkutan  $angkutan
      * @return \Illuminate\Http\Response
      */
-    public function show(angkutan $angkutan)
+    public function show($id)
     {
-        //
+        return view('pemohon.angkutan.detail');
     }
 
     /**
@@ -67,6 +69,8 @@ class AngkutanController extends Controller
     {
         if (Auth::user()->role == 'petugas') {
             return view('petugas.angkutan.edit');
+        } elseif (Auth::user()->role == 'pemohon') {
+            return view('pemohon.angkutan.edit');
         }
     }
 

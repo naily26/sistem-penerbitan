@@ -23,6 +23,8 @@ class PerusahaanController extends Controller
             return view('pemohon.perusahaan.index', compact('kbli'));
         } elseif (Auth::user()->role == 'petugas') {
             return view('petugas.perusahaan.index');
+        } elseif (Auth::user()->role == 'pengawas') {
+            return view('pengawas.perusahaan.index');
         }
     }
 
@@ -54,9 +56,9 @@ class PerusahaanController extends Controller
      * @param  \App\Models\perusahaan  $perusahaan
      * @return \Illuminate\Http\Response
      */
-    public function show(perusahaan $perusahaan)
+    public function show($id)
     {
-        //
+        return view('pemohon.perusahaan.detail');
     }
 
     /**
@@ -69,6 +71,8 @@ class PerusahaanController extends Controller
     {
         if (Auth::user()->role == 'petugas') {
             return view('petugas.perusahaan.edit');
+        } elseif (Auth::user()->role == 'pemohon') {
+            return view('pemohon.perusahaan.edit');
         }
     }
 

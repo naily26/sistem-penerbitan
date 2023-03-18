@@ -103,30 +103,25 @@
 
         @elseif (Auth::user()->role == 'pengawas')
         <!-- start: PENGAWAS -->
-        <li class="{{ Request::segment(1) === 'dashboard-pemohon' ? 'active' : '' }}">
-            <a href="/dashboard-pemohon"><i class="clip-home-3"></i>
+        <li class="{{ Request::segment(1) === 'home' ? 'active' : '' }}">
+            <a href="{{route('home')}}"><i class="clip-home-3"></i>
                 <span class="title"> Dashboard </span><span class="selected"></span>
-            </a>
-        </li>
-        <li class="{{ Request::segment(1) === 'dashboard-pemohon' ? 'active' : '' }}">
-            <a href="/dashboard-pemohon"><i class="clip-user-3"></i>
-                <span class="title"> Data Diri </span><span class="selected"></span>
             </a>
         </li>
         <li class="menu-header">
             <a class="menu-header">
-                <span class="title"> Data Penerbitan </span>
+                <span class="title"> Data Penerbitan Surat</span>
                 <span class="selected"></span>
             </a>
         </li>
-        <li class="{{ Request::segment(1) === 'perusahaan-pemohon' ? 'active' : '' }}">
-            <a href="/perusahaan-pemohon"><i class="clip-pencil"></i>
+        <li class="{{ Request::segment(1) === 'perusahaan' ? 'active' : '' }}">
+            <a href="{{route('perusahaan.index')}}"><i class="clip-pencil"></i>
                 <span class="title"> Perusahaan </span>
                 <span class="selected"></span>
             </a>
         </li>
-        <li class="{{ Request::segment(1) === 'kendaraan-pemohon' ? 'active' : '' }}">
-            <a href="/kendaraan-pemohon"><i class="clip-truck"></i>
+        <li class="{{ Request::segment(1) === 'angkutan' ? 'active' : '' }}">
+            <a href="{{route('angkutan.index')}}"><i class="clip-truck"></i>
                 <span class="title"> Angkutan </span><span class="selected"></span>
             </a>
         </li>
