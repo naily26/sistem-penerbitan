@@ -36,12 +36,6 @@
                 <span class="selected"></span>
             </a>
         </li>
-        <li class="menu-header">
-            <a class="menu-header">
-                <span class="title"> Data Pengguna </span>
-                <span class="selected"></span>
-            </a>
-        </li>
         <li class="{{ Request::segment(1) === 'pengawas' ? 'active' : '' }}">
             <a href="{{ route('pengawas.index')}}">
                 <i class="clip-user-4"></i>
@@ -62,13 +56,13 @@
                 <span class="selected"></span>
             </a>
         </li>
-        <li class="{{ Request::segment(1) === 'perusahaan-pemohon' ? 'active' : '' }}">
-            <a href="/perusahaan-pemohon"><i class="clip-pencil"></i>
+        <li class="{{ Request::segment(1) === 'perusahaan' ? 'active' : '' }}">
+            <a href="{{route('perusahaan.index')}}"><i class="clip-pencil"></i>
                 <span class="title"> Perusahaan </span>
                 <span class="selected"></span>
             </a>
         </li>
-        <li class="{{ Request::segment(1) === 'kendaraan-pemohon' ? 'active' : '' }}">
+        <li class="{{ Request::segment(1) === 'angkutan' ? 'active' : '' }}">
             <a href="{{route('angkutan.index')}}"><i class="clip-truck"></i>
                 <span class="title"> Angkutan </span><span class="selected"></span>
             </a>

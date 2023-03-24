@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/perfect-scrollbar/src/perfect-scrollbar.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/admin/css/theme_light.css')}}" type="text/css" id="skin_color">
     <link rel="stylesheet" href="{{ asset('assets/admin/css/print.css" type="text/css')}}" media="print" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <!--[if IE 7]>
 		<link rel="stylesheet" href="assets/admin/plugins/font-awesome/css/font-awesome-ie7.min.css">
 		<![endif]-->
@@ -120,11 +121,6 @@
         toastr.warning("{{$message}}");
         @endif
 
-    </script>
-    <script>
-        jQuery(document).ready(function () {
-            Main.init();
-        });
     </script>
     <script>
         jQuery(document).ready(function () {

@@ -17,7 +17,7 @@ class CreateKblisTable extends Migration
             $table->id();
             $table->string('kode');
             $table->string('keterangan');
-            $table->enum('kategori', ['angkutan-penumpang-umum', 'angkutan-barang-umum']);
+            $table->enum('kategori', ['angkutan-penumpang-umum-dalam-trayek', 'angkutan-penumpang-umum-tidak-dalam-trayek', 'angkutan-barang-umum' , 'angkutan-barang-khusus']);
             $table->text('uraian')->nullable();
             $table->timestamps();
         });

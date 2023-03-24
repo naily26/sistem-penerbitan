@@ -13,8 +13,8 @@
                 <ol class="breadcrumb">
                     <li>
                         <i class="clip-pencil"></i>
-                        <a href="{{ route('perusahaan.index')}}">
-                            Data Perusahaan
+                        <a href="{{ route('angkutan.index')}}">
+                            Data Angkutan
                         </a>
                     </li>
                     <li class="active">
@@ -22,7 +22,7 @@
                     </li>
                 </ol>
                 <div class="page-header">
-                    <h1>Pengecekan <small>Permohonan surat keterangan perusahaan</small></h1>
+                    <h1>Pengecekan <small>Permohonan surat rekomendasi peruntukan angkutan umum</small></h1>
                 </div>
 
                 <!-- end: PAGE TITLE & BREADCRUMB -->
@@ -42,64 +42,121 @@
                                     Nama Perusahaan </span>
                                 </label>
                                 <div class="col-sm-7">
-                                    <input type="text" class="form-control" id="Nama_Perusahaan" name="Nama_Perusahaan"
+                                    <input class="form-control" id="Nama_Perusahaan" name="Nama_Perusahaan"
                                         placeholder="Text Field" value="PT. AOE Explore" disabled>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">
-                                    Nama Pimpinan Perusahaan </span>
+                                    Nomor Kendaraan </span>
                                 </label>
                                 <div class="col-sm-7">
-                                    <input type="text" class="form-control" id="Nama_Pimpinan_Perusahaan"
-                                        name="Nama_Pimpinan_Perusahaan" placeholder="Text Field" value="PT. AOE Explore"
-                                        disabled>
+                                    <input type="text" class="form-control" id="full_name" name="full_name"
+                                        placeholder="Text Field" value="N 312 DD" disabled>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">
-                                    Nomor Telepon </span>
+                                    Nomor Uji </span>
+                                </label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" id="full_name" name="full_name"
+                                        placeholder="Text Field" value="092132312" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">
+                                    Merk </span>
                                 </label>
                                 <div class="col-sm-7">
                                     <input type="text" class="form-control" id="phone" name="phone"
-                                        placeholder="Text Field" value="0812912323" disabled>
+                                        placeholder="Text Field" value="hyundai" disabled>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">
-                                    Alamat </span>
+                                    Tipe </span>
                                 </label>
                                 <div class="col-sm-7">
                                     <input type="text" class="form-control" id="address" name="address"
-                                        placeholder="Text Field" value="Surabyaa" disabled>
+                                        placeholder="Text Field" value="sedan" disabled>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">
-                                    KBLI </span>
-                                </label>
-                                <div class="col-sm-7">
-                                    <input type="text" class="form-control" id="address" name="address"
-                                        placeholder="Text Field" value="41212" disabled>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">
-                                    NIB </span>
+                                    Tahun Pembuatan </span>
                                 </label>
                                 <div class="col-sm-7">
                                     <input type="text" class="form-control" id="city" name="city"
-                                        placeholder="Text Field" value="2130202434" disabled>
+                                        placeholder="Text Field" value="2010" disabled>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">
-                                    Dokumen NIB </span>
+                                    Nama Pemilik Kendaraan </span>
+                                </label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" id="city" name="city"
+                                        placeholder="Text Field" value="PT AOL explore" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">
+                                    Warna TNKB 
+                                </label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" id="city" name="city"
+                                        placeholder="Text Field" value="Biru" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">
+                                    Surat Keputusan Izin Trayek </span>
                                 </label>
                                 <div class="col-sm-7">
                                     <a href="{{asset('assets/admin/images/image01.jpg')}}" class="btn btn-file"
                                         target="_blank" title="Lihat Dokumen">
-                                        <i class="clip-file-2"> | Dokumen NIB</i></a>
+                                        <i class="clip-file-2"> | Surat Keputusan Izin Trayek</i></a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">
+                                    STNKB </span>
+                                </label>
+                                <div class="col-sm-7">
+                                    <a href="{{asset('assets/admin/images/image01.jpg')}}" class="btn btn-file"
+                                        target="_blank" title="Lihat Dokumen">
+                                        <i class="clip-file-2"> | STNKB</i></a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">
+                                    Buku Uji Berkala </span>
+                                </label>
+                                <div class="col-sm-7">
+                                    <a href="{{asset('assets/admin/images/image01.jpg')}}" class="btn btn-file"
+                                        target="_blank" title="Lihat Dokumen">
+                                        <i class="clip-file-2"> | Buku Uji Berkala</i></a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">
+                                    Surat Keputusan Izin Trayek </span>
+                                </label>
+                                <div class="col-sm-7">
+                                    <a href="{{asset('assets/admin/images/image01.jpg')}}" class="btn btn-file"
+                                        target="_blank" title="Lihat Dokumen">
+                                        <i class="clip-file-2"> | Surat Keputusan Izin Trayek</i></a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">
+                                    Surat Kuasa </span>
+                                </label>
+                                <div class="col-sm-7">
+                                    <a href="{{asset('assets/admin/images/image01.jpg')}}" class="btn btn-file"
+                                        target="_blank" title="Lihat Dokumen">
+                                        <i class="clip-file-2"> | Surat Kuasa</i></a>
                                 </div>
                             </div>
                             <div class="form-group">

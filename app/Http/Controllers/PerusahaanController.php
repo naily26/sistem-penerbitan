@@ -25,6 +25,8 @@ class PerusahaanController extends Controller
             return view('petugas.perusahaan.index');
         } elseif (Auth::user()->role == 'pengawas') {
             return view('pengawas.perusahaan.index');
+        } elseif (Auth::user()->role == 'admin') {
+            return view('admin.perusahaan.index');
         }
     }
 
@@ -47,7 +49,7 @@ class PerusahaanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -58,7 +60,12 @@ class PerusahaanController extends Controller
      */
     public function show($id)
     {
-        return view('pemohon.perusahaan.detail');
+        if (Auth::user()->role == 'pemohon') {
+            return view('pemohon.perusahaan.detail');
+        } elseif (Auth::user()->role == 'admin') {
+            return view('admin.perusahaan.detail');
+        }
+       
     }
 
     /**
@@ -73,6 +80,8 @@ class PerusahaanController extends Controller
             return view('petugas.perusahaan.edit');
         } elseif (Auth::user()->role == 'pemohon') {
             return view('pemohon.perusahaan.edit');
+        } elseif (Auth::user()->role == 'admin') {
+            return view('admin.perusahaan.edit');
         }
     }
 

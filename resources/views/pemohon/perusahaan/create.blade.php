@@ -72,34 +72,28 @@
                                     </div>
                                 </div>
                                 <div id="step-1">
-                                    <h2 class="StepTitle">Step 1 Content</h2>
+                                    <h2 class="StepTitle">Step 1 Siapkan berkas</h2>
                                     <div class="row">
                                         <div class="col-md-6 col-md-offset-2">
                                             Silahkan persiapkan beberapa dokumen berikut ini:
                                             <ul>
                                                 <li>
-                                                    Lorem ipsum dolor sit amet
+                                                    Dokumen NIB (Nomor Induk Berusaha)
                                                 </li>
                                                 <li>
-                                                    Consectetur adipiscing elit
+                                                    Sertifikat standar atau surat izin penyelenggaraan
                                                 </li>
                                                 <li>
-                                                    Integer molestie lorem at massa
+                                                    Surat izin trayek (bagi perusahaan penumpang umum)
                                                 </li>
                                                 <li>
-                                                    Facilisis in pretium nisl aliquet
+                                                    Rekapitulasi surat jalan (bagi perusahaan barang umum)
                                                 </li>
                                                 <li>
-                                                    Nulla volutpat aliquam velit
+                                                    Surat permohonan
                                                 </li>
                                                 <li>
-                                                    Faucibus porta lacus fringilla vel
-                                                </li>
-                                                <li>
-                                                    Aenean sit amet erat nunc
-                                                </li>
-                                                <li>
-                                                    Eget porttitor lorem
+                                                    Surat pernyataan
                                                 </li>
                                             </ul>
                                         </div>
@@ -113,14 +107,14 @@
                                     </div>
                                 </div>
                                 <div id="step-4">
-                                    <h2 class="StepTitle">Step 2 Content</h2>
+                                    <h2 class="StepTitle">Step 2 Pengisian form permohonan</h2>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">
                                             Nama Perusahaan <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="Nama_Perusahaan" name="Nama_Perusahaan"
-                                                placeholder="Text Field">
+                                            <input type="text" class="form-control" id="nama_perusahaan"
+                                                name="nama_perusahaan" placeholder="nama perusahaan">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -128,8 +122,8 @@
                                             Nama Pimpinan Perusahaan <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="Nama_Pimpinan_Perusahaan" name="Nama_Pimpinan_Perusahaan"
-                                                placeholder="Text Field">
+                                            <input type="text" class="form-control" id="nama_pimpinan"
+                                                name="nama_pimpinan" placeholder="nama pimpinan">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -137,17 +131,16 @@
                                             Nomor Telepon <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="phone" name="phone"
-                                                placeholder="Text Field">
+                                            <input type="text" class="form-control" id="nomor_telepon" name="nomor_telepon"
+                                                placeholder="nomor telepon">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Alamat <span class="symbol required"></span>
+                                        <label class="col-sm-3 control-label" for="uraian">
+                                            Alamat
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="address" name="address"
-                                                placeholder="Text Field">
+                                            <textarea placeholder="alamat" name="alamat" id="alamat" class="form-control" ></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -155,21 +148,206 @@
                                             KBLI <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-7">
-                                            <select class="form-control" id="country" name="country">
+                                            <select class="form-control" name="country" onchange="showDiv(this);">
                                                 <option value="">&nbsp;</option>
-                                                <option value="Country 1">KBLI 1</option>
-                                                <option value="KBLI 2">KBLI 2</option>
-                                                <option value="KBLI 3">KBLI 3</option>
+                                                @foreach ($kbli as $item)
+                                                <option value="{{$item->id}}">{{$item->kode}} - {{$item->keterangan}}
+                                                </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">
-                                           NIB  <span class="symbol required"></span>
+                                            NIB <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="city" name="city"
-                                                placeholder="Text Field">
+                                            <input type="text" class="form-control" id="nib" name="nib"
+                                                placeholder="nomor induk berusaha">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">
+                                            Tanggal NIB <span class="symbol required"></span>
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="date" class="form-control" id="tanggal_nib" name="tanggal_nib"
+                                                placeholder="tanggal NIB">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">
+                                            Dokumen NIB <span class="symbol required"></span>
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="input-group">
+                                                    <div class="form-control uneditable-input">
+                                                        <i class="fa fa-file fileupload-exists"></i>
+                                                        <span class="fileupload-preview"></span>
+                                                    </div>
+                                                    <div class="input-group-btn">
+                                                        <div class="btn btn-light-grey btn-file">
+                                                            <span class="fileupload-new"><i
+                                                                    class="fa fa-folder-open-o"></i> Select file</span>
+                                                            <span class="fileupload-exists"><i
+                                                                    class="fa fa-folder-open-o"></i> Change</span>
+                                                            <input type="file" class="file-input" name="dokumen_nib">
+                                                        </div>
+                                                        <a href="#" class="btn btn-light-grey fileupload-exists"
+                                                            data-dismiss="fileupload">
+                                                            <i class="fa fa-times"></i> Remove
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">
+                                            Sertifikat Standar / Surat Izin Penyelenggaraan <span class="symbol required"></span>
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="input-group">
+                                                    <div class="form-control uneditable-input">
+                                                        <i class="fa fa-file fileupload-exists"></i>
+                                                        <span class="fileupload-preview"></span>
+                                                    </div>
+                                                    <div class="input-group-btn">
+                                                        <div class="btn btn-light-grey btn-file">
+                                                            <span class="fileupload-new"><i
+                                                                    class="fa fa-folder-open-o"></i> Select file</span>
+                                                            <span class="fileupload-exists"><i
+                                                                    class="fa fa-folder-open-o"></i> Change</span>
+                                                            <input type="file" class="file-input" name="sertifikat_standar">
+                                                        </div>
+                                                        <a href="#" class="btn btn-light-grey fileupload-exists"
+                                                            data-dismiss="fileupload">
+                                                            <i class="fa fa-times"></i> Remove
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="angkutan-barang">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">
+                                                Rekapitulasi Surat Jalan (Delivery Order) <span
+                                                    class="symbol required"></span>
+                                            </label>
+                                            <div class="col-sm-7">
+                                                <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                    <div class="input-group">
+                                                        <div class="form-control uneditable-input">
+                                                            <i class="fa fa-file fileupload-exists"></i>
+                                                            <span class="fileupload-preview"></span>
+                                                        </div>
+                                                        <div class="input-group-btn">
+                                                            <div class="btn btn-light-grey btn-file">
+                                                                <span class="fileupload-new"><i
+                                                                        class="fa fa-folder-open-o"></i> Select
+                                                                    file</span>
+                                                                <span class="fileupload-exists"><i
+                                                                        class="fa fa-folder-open-o"></i> Change</span>
+                                                                <input type="file" class="file-input" name="surat_delivery_order">
+                                                            </div>
+                                                            <a href="#" class="btn btn-light-grey fileupload-exists"
+                                                                data-dismiss="fileupload">
+                                                                <i class="fa fa-times"></i> Remove
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="angkutan-penumpang">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">
+                                                Surat Izin Trayek <span class="symbol required"></span>
+                                            </label>
+                                            <div class="col-sm-7">
+                                                <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                    <div class="input-group">
+                                                        <div class="form-control uneditable-input">
+                                                            <i class="fa fa-file fileupload-exists"></i>
+                                                            <span class="fileupload-preview"></span>
+                                                        </div>
+                                                        <div class="input-group-btn">
+                                                            <div class="btn btn-light-grey btn-file">
+                                                                <span class="fileupload-new"><i
+                                                                        class="fa fa-folder-open-o"></i> Select
+                                                                    file</span>
+                                                                <span class="fileupload-exists"><i
+                                                                        class="fa fa-folder-open-o"></i> Change</span>
+                                                                <input type="file" class="file-input" name="surat_izin_trayek">
+                                                            </div>
+                                                            <a href="#" class="btn btn-light-grey fileupload-exists"
+                                                                data-dismiss="fileupload">
+                                                                <i class="fa fa-times"></i> Remove
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">
+                                            Surat Pernyataan <span class="symbol required"></span>
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="input-group">
+                                                    <div class="form-control uneditable-input">
+                                                        <i class="fa fa-file fileupload-exists"></i>
+                                                        <span class="fileupload-preview"></span>
+                                                    </div>
+                                                    <div class="input-group-btn">
+                                                        <div class="btn btn-light-grey btn-file">
+                                                            <span class="fileupload-new"><i
+                                                                    class="fa fa-folder-open-o"></i> Select file</span>
+                                                            <span class="fileupload-exists"><i
+                                                                    class="fa fa-folder-open-o"></i> Change</span>
+                                                            <input type="file" class="file-input" name="surat_pernyataan" required>
+                                                        </div>
+                                                        <a href="#" class="btn btn-light-grey fileupload-exists"
+                                                            data-dismiss="fileupload">
+                                                            <i class="fa fa-times"></i> Remove
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">
+                                            Surat Permohonan <span class="symbol required"></span>
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="input-group">
+                                                    <div class="form-control uneditable-input">
+                                                        <i class="fa fa-file fileupload-exists"></i>
+                                                        <span class="fileupload-preview"></span>
+                                                    </div>
+                                                    <div class="input-group-btn">
+                                                        <div class="btn btn-light-grey btn-file">
+                                                            <span class="fileupload-new"><i
+                                                                    class="fa fa-folder-open-o"></i> Select file</span>
+                                                            <span class="fileupload-exists"><i
+                                                                    class="fa fa-folder-open-o"></i> Change</span>
+                                                            <input type="file" class="file-input" name="surat_permohonan" required>
+                                                        </div>
+                                                        <a href="#" class="btn btn-light-grey fileupload-exists"
+                                                            data-dismiss="fileupload">
+                                                            <i class="fa fa-times"></i> Remove
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -204,6 +382,9 @@
 <script src="{{asset('assets/admin/plugins/jQuery-Smart-Wizard/js/jquery.smartWizard.js')}}"></script>
 <script src="{{asset('assets/admin/js/form-wizard.js')}}"></script>
 
+<script src="{{ asset('assets/admin/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js') }}"></script>
+<script src="{{asset('assets/admin/js/form-elements.js')}}"></script>
+
 <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 <script>
     jQuery(document).ready(function () {
@@ -212,8 +393,41 @@
     });
 
 </script>
+
+<script>
+
+    function showDiv(element) {
+        var kate;
+        var resdata = @json($kbli);
+
+        for (const key in resdata) {
+            if (resdata.hasOwnProperty.call(resdata, key)) {
+                if( resdata[key].id == element.value) {
+                     kate = resdata[key].kategori;
+                }
+            }
+        }
+        
+        document.getElementById("angkutan-barang").style.display = kate == 'angkutan-barang-umum' ? 'block' : 'none';
+        document.getElementById("angkutan-penumpang").style.display = kate == 'angkutan-penumpang-umum-dalam-trayek' || kate == 'angkutan-penumpang-umum-tidak-dalam-trayek' ? 'block' : 'none';
+    }
+
+</script>
+
 @endpush
 
 @push('style')
+<link rel="stylesheet" href="{{ asset('assets/admin/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css') }}">
+
+<style>
+    #angkutan-barang {
+        display: none
+    }
+
+    #angkutan-penumpang {
+        display: none
+    }
+
+</style>
 
 @endpush

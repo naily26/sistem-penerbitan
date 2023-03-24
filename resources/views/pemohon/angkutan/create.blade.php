@@ -117,6 +117,20 @@
                                     <h2 class="StepTitle">Step 3 Title</h2>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">
+                                            Keterangan <span class="symbol required"></span>
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <select class="form-control" id="keterangan" name="keterangan"
+                                                onchange="cekKeterangan(this)">
+                                                <option value="">&nbsp;</option>
+                                                <option value="perpanjangan-STNK">Perpanjangan STNK</option>
+                                                <option value="kendaraan-baru">Kendaraan Baru</option>
+                                                <option value="kendaraan-mutasi">Kendaraan Mutasi</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">
                                             Nomor Kendaraan <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-7">
@@ -216,16 +230,47 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">
-                                            Keterangan <span class="symbol required"></span>
+                                            Surat Kuasa <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-7">
-                                            <select class="form-control" id="keterangan" name="keterangan"
-                                                onchange="cekKeterangan(this)">
-                                                <option value="">&nbsp;</option>
-                                                <option value="perpanjangan-STNK">Perpanjangan STNK</option>
-                                                <option value="kendaraan-baru">Kendaraan Baru</option>
-                                                <option value="kendaraan-mutasi">Kendaraan Mutasi</option>
-                                            </select>
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="input-group">
+                                                    <div class="form-control uneditable-input">
+                                                        <i class="fa fa-file fileupload-exists"></i>
+                                                        <span class="fileupload-preview"></span>
+                                                    </div>
+                                                    <div class="input-group-btn">
+                                                        <div class="btn btn-light-grey btn-file">
+                                                            <span class="fileupload-new"><i class="fa fa-folder-open-o"></i> Select file</span>
+                                                            <span class="fileupload-exists"><i class="fa fa-folder-open-o"></i> Change</span>
+                                                            <input type="file" class="file-input">
+                                                        </div>
+                                                        <a href="#" class="btn btn-light-grey fileupload-exists" data-dismiss="fileupload">
+                                                            <i class="fa fa-times"></i> Remove
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">
+                                            Foto Kendaraan (bagian depan) <span class="symbol required"></span>
+                                        </label>
+                                        <div class="col-sm-7">
+                                                <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                    <div class="fileupload-new thumbnail" style="width: 160px; height: 120px;"><img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA?text=no+image" alt=""/>
+                                                    </div>
+                                                    <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 160px; max-height: 120px; line-height: 20px;"></div>
+                                                    <div>
+                                                        <span class="btn btn-light-grey btn-file"><span class="fileupload-new"><i class="fa fa-picture-o"></i> Select image</span><span class="fileupload-exists"><i class="fa fa-picture-o"></i> Change</span>
+                                                            <input type="file">
+                                                        </span>
+                                                        <a href="#" class="btn fileupload-exists btn-light-grey" data-dismiss="fileupload">
+                                                            <i class="fa fa-times"></i> Remove
+                                                        </a>
+                                                    </div>
+                                                </div>
                                         </div>
                                     </div>
                                     <div id="kendaraan-baru">
@@ -285,11 +330,15 @@
 <script src="{{asset('assets/admin/plugins/jquery-validation/dist/jquery.validate.min.js')}}"></script>
 <script src="{{ asset('assets/admin/plugins/jQuery-Smart-Wizard/js/jquery.smartWizard.js')}}"></script>
 <script src="{{asset('assets/admin/js/form-wizard.js')}}"></script>
+
+<script src="{{ asset('assets/admin/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js') }}"></script>
+<script src="{{asset('assets/admin/js/form-elements.js')}}"></script>
 <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 <script>
     jQuery(document).ready(function () {
         Main.init();
         FormWizard.init();
+        FormElements.init();
     });
 
 </script>
@@ -308,6 +357,7 @@
 @endpush
 
 @push('style')
+<link rel="stylesheet" href="{{ asset('assets/admin/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css') }}">
 
 <style>
     #izin-trayek {

@@ -35,11 +35,21 @@
                         </a>
                     </li>
                     <li>
-                        <a target="blank"  href="{{ route('login') }}">
+                        @if (Route::has('login'))
+                        @auth
+                        <a target="blank" href="{{ route('login') }}">
+                            <div class="btn btn-primary" style="font-size: small">
+                                Dashboard
+                            </div>
+                        </a>
+                        @else
+                        <a target="blank" href="{{ route('home') }}">
                             <div class="btn btn-primary" style="font-size: small">
                                 Masuk
                             </div>
                         </a>
+                        @endauth
+                        @endif
                     </li>
                 </ul>
             </div>

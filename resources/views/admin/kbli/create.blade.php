@@ -50,7 +50,7 @@
 												Keterangan
 											</label>
 											<div class="col-sm-9">
-												<input type="text" name="keterangan" placeholder="Keterangan" id="form-field-1" class="form-control" required>
+												<input type="text" name="keterangan" placeholder="Keterangan" id="form-field-1" class="form-control" oninput="this.value = this.value.toUpperCase()" required>
 											</div>
 										</div>
 										<div class="form-group">
@@ -61,7 +61,9 @@
 												<select class="form-control" id="kategori" name="kategori" required>
 													<option value="">&nbsp;</option>
 													<option value="angkutan-barang-umum">Angkutan Barang Umum</option>
-													<option value="angkutan-penumpang-umum">Angkutan Penumpang Umum</option>
+													<option value="angkutan-barang-khusus">Angkutan Barang Khusus</option>
+													<option value="angkutan-penumpang-umum-dalam-trayek">Angkutan Penumpang Umum Dalam Trayek</option>
+													<option value="angkutan-penumpang-umum-tidak-dalam-trayek">Angkutan Penumpang Umum Tidak Dalam Trayek</option>
 												</select>
 											</div>
 										</div>
@@ -100,17 +102,9 @@
   
         <script src="assets/admin/plugins/jquery-inputlimiter/jquery.inputlimiter.1.3.1.min.js"></script>
 		<script src="assets/admin/plugins/autosize/jquery.autosize.min.js"></script>
-		<script src="assets/admin/plugins/select2/select2.min.js"></script>
+		<script src="{{asset('assets/admin/plugins/select2/select2.min.js')}}"></script>
 		<script src="assets/admin/plugins/jquery.maskedinput/src/jquery.maskedinput.js"></script>
 		<script src="assets/admin/plugins/jquery-maskmoney/jquery.maskMoney.js"></script>
-		<script src="assets/admin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-		<script src="assets/admin/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
-		<script src="assets/admin/plugins/bootstrap-daterangepicker/moment.min.js"></script>
-		<script src="assets/admin/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
-		<script src="assets/admin/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
-		<script src="assets/admin/plugins/bootstrap-colorpicker/js/commits.js"></script>
-		<script src="assets/admin/plugins/jQuery-Tags-Input/jquery.tagsinput.js"></script>
-		<script src="assets/admin/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
 		<script src="assets/admin/plugins/summernote/build/summernote.min.js"></script>
 		<script src="assets/admin/plugins/ckeditor/ckeditor.js"></script>
 		<script src="assets/admin/plugins/ckeditor/adapters/jquery.js"></script>
@@ -134,7 +128,7 @@
 @endpush
 
 @push('style')
-<link rel="stylesheet" href="assets/admin/plugins/select2/select2.css">
+<link rel="stylesheet" href="{{asset('assets/admin/plugins/select2/select2.css')}}">
 <link rel="stylesheet" href="assets/admin/plugins/datepicker/css/datepicker.css">
 <link rel="stylesheet" href="assets/admin/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
 <link rel="stylesheet" href="assets/admin/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css">

@@ -23,6 +23,8 @@ class AngkutanController extends Controller
             return view('petugas.angkutan.index');
         } elseif (Auth::user()->role == 'pengawas') {
             return view('pengawas.angkutan.index');
+        } elseif (Auth::user()->role == 'admin') {
+            return view('admin.angkutan.index');
         }
     }
 
@@ -56,7 +58,12 @@ class AngkutanController extends Controller
      */
     public function show($id)
     {
-        return view('pemohon.angkutan.detail');
+        if (Auth::user()->role == 'pemohon') {
+            return view('pemohon.angkutan.detail');
+        } elseif (Auth::user()->role == 'admin') {
+            return view('admin.angkutan.detail');
+        } 
+       
     }
 
     /**
@@ -71,6 +78,8 @@ class AngkutanController extends Controller
             return view('petugas.angkutan.edit');
         } elseif (Auth::user()->role == 'pemohon') {
             return view('pemohon.angkutan.edit');
+        } elseif (Auth::user()->role == 'admin') {
+            return view('admin.angkutan.edit');
         }
     }
 

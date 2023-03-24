@@ -3,161 +3,10 @@
 
 <!-- start: PAGE -->
 <div class="main-content">
-    <!-- start: PANEL CONFIGURATION MODAL FORM -->
-    <div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title">Panel Configuration</h4>
-                </div>
-                <div class="modal-body">
-                    Here will be a configuration form
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">
-                        Close
-                    </button>
-                    <button type="button" class="btn btn-primary">
-                        Save changes
-                    </button>
-                </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
-    <!-- end: SPANEL CONFIGURATION MODAL FORM -->
     <div class="container">
         <!-- start: PAGE HEADER -->
         <div class="row">
             <div class="col-sm-12">
-                <!-- start: STYLE SELECTOR BOX -->
-                <div id="style_selector" class="hidden-xs">
-                    <div id="style_selector_container" style="display:block">
-                        <div class="style-main-title">
-                            Style Selector
-                        </div>
-                        <div class="box-title">
-                            Choose Your Layout Style
-                        </div>
-                        <div class="input-box">
-                            <div class="input">
-                                <select name="layout">
-                                    <option value="default">Wide</option>
-                                    <option value="boxed">Boxed</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="box-title">
-                            Choose Your Header Style
-                        </div>
-                        <div class="input-box">
-                            <div class="input">
-                                <select name="header">
-                                    <option value="fixed">Fixed</option>
-                                    <option value="default">Default</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="box-title">
-                            Choose Your Footer Style
-                        </div>
-                        <div class="input-box">
-                            <div class="input">
-                                <select name="footer">
-                                    <option value="default">Default</option>
-                                    <option value="fixed">Fixed</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="box-title">
-                            Backgrounds for Boxed Version
-                        </div>
-                        <div class="images boxed-patterns">
-                            <a id="bg_style_1" href="#"><img alt="" src="assets/admin/images/bg.png"></a>
-                            <a id="bg_style_2" href="#"><img alt="" src="assets/admin/images/bg_2.png"></a>
-                            <a id="bg_style_3" href="#"><img alt="" src="assets/admin/images/bg_3.png"></a>
-                            <a id="bg_style_4" href="#"><img alt="" src="assets/admin/images/bg_4.png"></a>
-                            <a id="bg_style_5" href="#"><img alt="" src="assets/admin/images/bg_5.png"></a>
-                        </div>
-                        <div class="box-title">
-                            5 Predefined Color Schemes
-                        </div>
-                        <div class="images icons-color">
-                            <a id="light" href="#"><img class="active" alt=""
-                                    src="assets/admin/images/lightgrey.png"></a>
-                            <a id="dark" href="#"><img alt="" src="assets/admin/images/darkgrey.png"></a>
-                            <a id="black_and_white" href="#"><img alt=""
-                                    src="assets/admin/images/blackandwhite.png"></a>
-                            <a id="navy" href="#"><img alt="" src="assets/admin/images/navy.png"></a>
-                            <a id="green" href="#"><img alt="" src="assets/admin/images/green.png"></a>
-                        </div>
-                        <div class="box-title">
-                            Style it with LESS
-                        </div>
-                        <div class="images">
-                            <div class="form-group">
-                                <label>
-                                    Basic
-                                </label>
-                                <input type="text" value="#ffffff" class="color-base">
-                                <div class="dropdown">
-                                    <a class="add-on dropdown-toggle" data-toggle="dropdown"><i
-                                            style="background-color: #ffffff"></i></a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <div class="colorpalette"></div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>
-                                    Text
-                                </label>
-                                <input type="text" value="#555555" class="color-text">
-                                <div class="dropdown">
-                                    <a class="add-on dropdown-toggle" data-toggle="dropdown"><i
-                                            style="background-color: #555555"></i></a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <div class="colorpalette"></div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>
-                                    Elements
-                                </label>
-                                <input type="text" value="#007AFF" class="color-badge">
-                                <div class="dropdown">
-                                    <a class="add-on dropdown-toggle" data-toggle="dropdown"><i
-                                            style="background-color: #007AFF"></i></a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <div class="colorpalette"></div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="height:25px;line-height:25px; text-align: center">
-                            <a class="clear_style" href="#">
-                                Clear Styles
-                            </a>
-                            <a class="save_style" href="#">
-                                Save Styles
-                            </a>
-                        </div>
-                    </div>
-                    <div class="style-toggle open"></div>
-                </div>
-                <!-- end: STYLE SELECTOR BOX -->
                 <!-- start: PAGE TITLE & BREADCRUMB -->
                 <ol class="breadcrumb">
                     <li>
@@ -168,16 +17,6 @@
                     </li>
                     <li class="active">
                         Dashboard
-                    </li>
-                    <li class="search-box">
-                        <form class="sidebar-search">
-                            <div class="form-group">
-                                <input type="text" placeholder="Start Searching...">
-                                <button class="submit">
-                                    <i class="clip-search-3"></i>
-                                </button>
-                            </div>
-                        </form>
                     </li>
                 </ol>
                 <div class="page-header">
@@ -193,11 +32,10 @@
                 <div class="core-box">
                     <div class="heading">
                         <i class="clip-user-4 circle-icon circle-green"></i>
-                        <h2>Manage Users</h2>
+                        <h2>Manage Petugas</h2>
                     </div>
                     <div class="content">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                        tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                        Pada halaman ini, anda dapat menambahkan data petugas untuk membuat akun petugas
                     </div>
                     <a class="view-more" href="#">
                         View More <i class="clip-arrow-right-2"></i>
@@ -208,11 +46,10 @@
                 <div class="core-box">
                     <div class="heading">
                         <i class="clip-clip circle-icon circle-teal"></i>
-                        <h2>Manage Orders</h2>
+                        <h2>Manage KBLI</h2>
                     </div>
                     <div class="content">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                        tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                        Pada halaman ini, anda dapat mengelola kode KBLI (menambah, mengedit dan menghapus). 
                     </div>
                     <a class="view-more" href="#">
                         View More <i class="clip-arrow-right-2"></i>
@@ -223,11 +60,10 @@
                 <div class="core-box">
                     <div class="heading">
                         <i class="clip-database circle-icon circle-bricky"></i>
-                        <h2>Manage Data</h2>
+                        <h2>Penerbitan surat</h2>
                     </div>
                     <div class="content">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                        tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                        Pada halaman ini, anda dapat melakukan export data surat ynag telah diterbitkan. 
                     </div>
                     <a class="view-more" href="#">
                         View More <i class="clip-arrow-right-2"></i>
@@ -237,99 +73,11 @@
         </div>
         <div class="row">
             <div class="col-sm-7">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <i class="clip-stats"></i>
-                        Site Visits
-                        <div class="panel-tools">
-                            <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                            </a>
-                            <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <a class="btn btn-xs btn-link panel-refresh" href="#">
-                                <i class="fa fa-refresh"></i>
-                            </a>
-                            <a class="btn btn-xs btn-link panel-close" href="#">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <div class="flot-medium-container">
-                            <div id="placeholder-h1" class="flot-placeholder"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-5">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <i class="clip-pie"></i>
-                                Acquisition
-                                <div class="panel-tools">
-                                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-config" href="#panel-config"
-                                        data-toggle="modal">
-                                        <i class="fa fa-wrench"></i>
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-refresh" href="#">
-                                        <i class="fa fa-refresh"></i>
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-close" href="#">
-                                        <i class="fa fa-times"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                <div class="flot-mini-container">
-                                    <div id="placeholder-h2" class="flot-placeholder"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <i class="clip-bars"></i>
-                                Pageviews real-time
-                                <div class="panel-tools">
-                                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-config" href="#panel-config"
-                                        data-toggle="modal">
-                                        <i class="fa fa-wrench"></i>
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-refresh" href="#">
-                                        <i class="fa fa-refresh"></i>
-                                    </a>
-                                    <a class="btn btn-xs btn-link panel-close" href="#">
-                                        <i class="fa fa-times"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                <div class="flot-mini-container">
-                                    <div id="placeholder-h3" class="flot-placeholder"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-7">
                 <div class="row space12">
                     <ul class="mini-stats col-sm-12">
                         <li class="col-sm-4">
                             <div class="sparkline_bar_good">
-                                <span>3,5,9,8,13,11,14</span>+10%
+                                
                             </div>
                             <div class="values">
                                 <strong>18304</strong>
